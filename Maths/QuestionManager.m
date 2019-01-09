@@ -7,8 +7,11 @@
 //
 
 #import "QuestionManager.h"
+#import "AdditionQuestion.h"
 
 @implementation QuestionManager
+
+
 
 - (instancetype)init
 {
@@ -20,9 +23,38 @@
 }
 
 
+
+
 - (void)addQuestion:(AdditionQuestion *)newQuestion {
     [_questions addObject:newQuestion];
 }
+
+- (NSString *)timeOutput {
+    AdditionQuestion *additionQuestion;
+    
+    double totalTime = 0.0;
+    for (additionQuestion in _questions) {
+        totalTime += [additionQuestion answerTime];
+    }
+    //// line (38-41) is alternative to line (34-36)
+    //    for (int i=0; i<_questions.count; i++) {
+    //        AdditionQuestion *additionQuestion = _questions[i];
+    //        totalTime += [additionQuestion answerTime];
+    //    }
+    
+    double averageTime = 0.0;
+    for (additionQuestion in _questions) {
+        averageTime = totalTime/_questions.count;
+    }
+    
+    NSString* outputTimeResults = [NSString stringWithFormat: @"total time: %.2fs, average time: %.2fs", totalTime, averageTime];
+    
+    return outputTimeResults;
+}
+
+
+
+
 
 
 @end

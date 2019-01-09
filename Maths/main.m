@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     ScoreKeeper *keepTrack = [[ScoreKeeper alloc] init];
     
     QuestionManager *questions = [[QuestionManager alloc] init];
-    
+   
     
     
     while (gameOn) {
@@ -36,11 +36,11 @@ int main(int argc, const char * argv[]) {
         if (answer == [test answer]) {
             NSLog(@"Right!");
             [keepTrack correctAnswer];
-            NSLog(@"It took you: %.2fseconds", test.answerTime);
+            NSLog(@"%@", [questions timeOutput]);
         } else {
             NSLog(@"Wrong!");
             [keepTrack incorrectAnswer];
-            NSLog(@"It took you: %.2fseconds", test.answerTime);
+            NSLog(@"%@", [questions timeOutput]);
         }
         
         
