@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1707ADC421E69312009CEF8A /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1707ADC321E69312009CEF8A /* QuestionManager.m */; };
 		174CC04A21E5609C00148217 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 174CC04921E5609C00148217 /* main.m */; };
 		174CC05221E56A7400148217 /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 174CC05121E56A7400148217 /* AdditionQuestion.m */; };
 		174CC05521E587D600148217 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 174CC05421E587D600148217 /* InputHandler.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1707ADC221E69312009CEF8A /* QuestionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		1707ADC321E69312009CEF8A /* QuestionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
 		174CC04621E5609C00148217 /* Maths */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Maths; sourceTree = BUILT_PRODUCTS_DIR; };
 		174CC04921E5609C00148217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		174CC05021E56A7400148217 /* AdditionQuestion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdditionQuestion.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				174CC04921E5609C00148217 /* main.m */,
+				1707ADC221E69312009CEF8A /* QuestionManager.h */,
+				1707ADC321E69312009CEF8A /* QuestionManager.m */,
 				174CC05321E587D600148217 /* InputHandler.h */,
 				174CC05421E587D600148217 /* InputHandler.m */,
 				174CC05621E5923C00148217 /* ScoreKeeper.h */,
@@ -133,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1707ADC421E69312009CEF8A /* QuestionManager.m in Sources */,
 				174CC05821E5923C00148217 /* ScoreKeeper.m in Sources */,
 				174CC04A21E5609C00148217 /* main.m in Sources */,
 				174CC05521E587D600148217 /* InputHandler.m in Sources */,

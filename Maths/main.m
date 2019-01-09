@@ -10,29 +10,37 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     
     BOOL gameOn = YES;
     ScoreKeeper *keepTrack = [[ScoreKeeper alloc] init];
     
+    QuestionManager *questions = [[QuestionManager alloc] init];
+    
+    
+    
     while (gameOn) {
         AdditionQuestion *test = [[AdditionQuestion alloc] init];
-//        NSLog(@"%@", );
+        [questions addQuestion: test];
         
         InputHandler *inputHandler = [[InputHandler alloc] init];
         NSString *inputString = [inputHandler getInput:[test question]];
         
         int answer = [inputString intValue];
         
+        test.endTime = [NSDate date];
         
         // check answer
         if (answer == [test answer]) {
             NSLog(@"Right!");
             [keepTrack correctAnswer];
+            NSLog(@"It took you: %.2fseconds", test.answerTime);
         } else {
             NSLog(@"Wrong!");
             [keepTrack incorrectAnswer];
+            NSLog(@"It took you: %.2fseconds", test.answerTime);
         }
         
         

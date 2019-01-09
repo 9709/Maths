@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *question;
 @property NSInteger answer;
+@property NSDate *startTime;
+@property NSDate *endTime;
+
+- (NSTimeInterval)answerTime;
+
 
 @end
 

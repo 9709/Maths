@@ -12,12 +12,17 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        _startTime = [NSDate date];
         int randomNum1 = arc4random_uniform(91)+10;
         int randomNum2 = arc4random_uniform(91)+10;
         _question = [NSString stringWithFormat:@"What is %d + %d?", randomNum1, randomNum2];
         _answer = randomNum1 + randomNum2;
     }
     return self;
+}
+
+- (NSTimeInterval)answerTime {
+    return [_endTime timeIntervalSinceDate: _startTime];
 }
 
 
