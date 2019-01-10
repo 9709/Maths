@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -19,18 +20,20 @@ int main(int argc, const char * argv[]) {
     
     QuestionManager *questions = [[QuestionManager alloc] init];
    
-    
+    QuestionFactory *generate = [[QuestionFactory alloc] init];
     
     while (gameOn) {
-        AdditionQuestion *test = [[AdditionQuestion alloc] init];
-        [questions addQuestion: test];
+        
+        Question *test = [generate generateRandomQuestion];
+        [questions addQuestion: test]; // returning test to questions array to keep track to time intervals
         
         InputHandler *inputHandler = [[InputHandler alloc] init];
-        NSString *inputString = [inputHandler getInput:[test question]];
+        NSString *inputString = [inputHandler getInput:[test question]]; // asking the question
         
         int answer = [inputString intValue];
         
         test.endTime = [NSDate date];
+        
         
         // check answer
         if (answer == [test answer]) {

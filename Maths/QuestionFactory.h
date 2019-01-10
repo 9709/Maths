@@ -1,5 +1,5 @@
 //
-//  QuestionManager.h
+//  QuestionFactory.h
 //  Maths
 //
 //  Created by Matthew Chan on 2019-01-09.
@@ -11,14 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QuestionManager : NSObject
+@interface QuestionFactory : NSObject
 
-@property (nonatomic) NSMutableArray *questions;
-
-- (void)addQuestion:(Question *)newQuestion;
-
-- (NSString *)timeOutput;
-
+- (Question *) generateRandomQuestion;
 
 @end
 
